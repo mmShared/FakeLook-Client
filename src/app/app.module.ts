@@ -14,7 +14,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //FeedModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyAaJCbX9CGeDcU133HBoXO5UZWBXPZ6AsE"
     }),
