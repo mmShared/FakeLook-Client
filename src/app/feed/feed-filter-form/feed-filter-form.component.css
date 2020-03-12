@@ -1,0 +1,25 @@
+.marginForm{
+    margin: 20px;
+}
+#title {
+    text-align: center;
+    text-decoration: underline;
+}
+.formContainer{
+    background-color: cadetblue;
+    width: 300px;
+}
+#radiusLocation{
+    width: 50px;
+}
+input{
+    text-align: center;
+}
+button{
+    height: 30px;
+    width: 250px;
+    background-color: burlywood;
+    color: blue;
+    border-radius: 10px;
+    font-size: 14px;
+}

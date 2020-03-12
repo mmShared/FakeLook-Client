@@ -1,0 +1,13 @@
+<div class="divMap">
+    <agm-map [latitude]='latitude' [longitude]='longitude' (mapClick)="onMapClick($event)">
+        <div *ngFor="let post of posts">
+            <agm-marker [latitude]='post.Longitude' [longitude]='post.Latitude' (markerClick)="test($event)">
+                <agm-info-window>
+                    <div id="textName">{{post.FirstName}} {{post.LastName}}</div>
+                    <img src="http://localhost:3000/{{post.Photo}}">
+                    <div>{{post.Date| date: 'dd/MM/yyyy'}}</div>
+                </agm-info-window>
+            </agm-marker>
+        </div>
+    </agm-map>
+</div> 

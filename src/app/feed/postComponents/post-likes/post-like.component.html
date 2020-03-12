@@ -1,0 +1,9 @@
+<div class="listLikes">Likes: {{countLikes}}</div>
+<div class="listLikes">
+    <select>
+        <option *ngFor="let like of listLikes">{{like.UserLiked}}</option>
+    </select>
+</div>
+<button (click)="changePicture()" id="buttonPicture">
+    <img id="likePicture" src={{imageLike}}>
+</button>

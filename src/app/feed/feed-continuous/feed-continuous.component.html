@@ -1,0 +1,16 @@
+<ul class="location">
+  <li *ngFor="let post of posts">
+    <div>
+      <div id="publisherTitle">Publisher: {{post.FirstName}} {{post.LastName}}</div>
+      <br>
+      <div>{{post.Text}}</div>
+      <app-post-tags id="postTags" [postId]='post.Id'></app-post-tags>
+      <img src="http://localhost:3000/{{post.Photo}}">
+      <br>
+      <app-post-like [postId]='post.Id'></app-post-like>
+      <app-post-comment [postId]='post.Id'></app-post-comment>
+      <br>
+    </div>
+  </li>
+</ul>
+

@@ -1,0 +1,8 @@
+#ng-template{
+    width: 800px;
+}
+#btnPublish{
+    position: absolute;
+    margin-left: 50px;
+    font-size: 15px;
+}

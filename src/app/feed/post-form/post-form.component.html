@@ -1,0 +1,45 @@
+<button class="btn btn-lg btn-outline-primary" id="btnPublish" (click)="open(content)">Publish New Post</button> 
+<ng-template #content let-modal> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Post</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="postFormGroup" method="POST" (ngSubmit)='save()'>
+            <div class="form-group">
+                <label>Text</label>
+                <div class="input-group">
+                    <input formControlName='Text' type="text" class="form-control">
+                </div>
+                <label>Photo</label>
+                <div class="input-group">
+                    <input formControlName='Photo' (change)="selectImage($event)" accept="image/*" type="file">
+                </div>
+                <div *ngIf='postFormGroup.get("Photo").errors?.required && postFormGroup.get("Photo").touched' [style.color]='"red"'>Photo Is Required!!</div>
+                <label>Tag</label>
+                <div class="input-group">
+                    <input type="text" formControlName='Tag' placeholder="tag" class="form-control">
+                    <button type="button" (click)='addTagTolist()'>Save Tag</button>
+                </div>
+                <span>Tags: </span>
+                <span *ngFor="let tag of listTags">
+                    <span>{{tag}} </span>
+                </span>
+                <br>
+                <label>Tagged Users</label>
+                <div class="input-group">
+                    <select class="form-control">
+                        <option value="my user">my user</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" [disabled]="!postFormGroup.valid" class="btn btn-outline-dark">Send</button>
+            </div>
+        </form>
+    </div>
+</ng-template> 
+ 

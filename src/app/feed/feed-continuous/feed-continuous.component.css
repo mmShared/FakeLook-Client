@@ -1,0 +1,22 @@
+.location{
+    float: right;
+    margin-top: -450px;
+    margin-right: 450px;
+} 
+li{
+    display: inherit;
+    border: solid 3px;
+    border-radius: 15px;
+    border-color: gold;
+    font-family: 'Franklin Gothic Medium',sans-serif;
+}
+img{
+    height: 270px;
+    width: 450px;
+}
+#publisherTitle{
+    font-size: 25px;
+}
+#postTags{
+    display: table-cell;
+}

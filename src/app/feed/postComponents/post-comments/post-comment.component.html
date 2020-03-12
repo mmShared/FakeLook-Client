@@ -1,0 +1,15 @@
+<div>Comments: </div>
+<form [formGroup]='commentGroup' (ngSubmit)='addComment()'>
+  <input formControlName='Text' type="text" placeholder="new comment">
+  <button type="submit">Add Comment</button>
+</form>
+<div id="comment" *ngFor="let comment of comments">
+    <hr>
+    <div>
+      <span>{{comment.UserCommented}}:</span>
+      <br>
+      <span id="text">
+        {{comment.Text}}
+      </span>
+    </div>
+</div>
