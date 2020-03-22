@@ -1,0 +1,32 @@
+form{
+    position: absolute;
+    margin-left: 430px;
+    align-items: center;
+    text-align: center;
+    background-color: darkcyan;
+    height: 450px;
+    width: 400px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+h2{
+    color: blue;
+    align-items: center;
+    text-align: center;
+    margin-top: -30px;
+}
+input{
+    margin-top: 10px;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+    height: 20px;
+} 
+#submit{
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+    background-color:sandybrown;
+}

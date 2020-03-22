@@ -1,17 +1,21 @@
 #underLine{
-    text-decoration: underline;
     margin-top: 20px;
 }
 form{
     background-color: darkcyan;
     border-radius: 10px;
     position: absolute;
-    margin-left: 450px;
+    margin-left: 460px;
     align-items: center;
     text-align: center;
     font-size: 25px;
     width: 350px;
-    margin-top: 70px;
+    margin-top: 40px;
+}
+h2{
+    color: blue;
+    align-items: center;
+    text-align: center;
 }
 input{
     margin-top: 15px;
@@ -22,8 +26,15 @@ input{
 }
 #submit{
     width:100px;
+    color: red;
+    background-color:sandybrown;
 }
 #notRegister{
     font-size: 20px;
     margin-bottom: 20px;
+    margin-right: 100px;
+}
+#example{
+    font-size: 15px;
+    margin-right: -100px;
 }

@@ -11,11 +11,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  navLinks = [
-    {
-      path: 'register',
-      label: 'register view'
-    }
-  ];
+
+  test(){
+    debugger
+  }
 
 }

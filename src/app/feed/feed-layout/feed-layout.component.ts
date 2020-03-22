@@ -14,8 +14,8 @@ export class FeedLayoutComponent implements OnInit {
   // feedMap: FeedMapComponent;
   // feedContinuous: FeedContinuousComponent;
 
-  showMapFeed = true;
-  showContinuousFeed = true;
+  // showMapFeed = true;
+  // showContinuousFeed = true;
 
   ngOnInit() {
   }
@@ -31,13 +31,13 @@ export class FeedLayoutComponent implements OnInit {
     }
   ];
 
-  clickMapFeed(){
-    this.showMapFeed = true;
-    this.showContinuousFeed = false;
-  }
+  // clickMapFeed(){
+  //   this.showMapFeed = true;
+  //   this.showContinuousFeed = false;
+  // }
 
-  clickContinuousFeed(){
-    this.showMapFeed = false;
-    this.showContinuousFeed = true;
-  }
+  // clickContinuousFeed(){
+  //   this.showMapFeed = false;
+  //   this.showContinuousFeed = true;
+  // }
 }
