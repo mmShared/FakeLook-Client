@@ -1,10 +1,5 @@
 a{
     margin: 20px;
     font-size: 20px;
-}
-#routeRegister{
-    position: absolute;
-    margin-top: 364px;
-    margin-left: 680px;
-    z-index: 1;
+    color: blue;
 }

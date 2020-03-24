@@ -5,14 +5,15 @@ import { FeedModule } from './feed/feed.module';
 const routes: Routes = [
   {
     path: 'feed', loadChildren: () =>
-    import('./feed/feed.module').then(mod => mod.FeedModule)
+    import('./feed/feed.module').then(mod => mod.FeedModule),
   },
   {
     path: 'auth', loadChildren: () =>
     import('./authentication/authentication.module')
     .then(mod => mod.AuthenticationModule)
   },
-  { path: '', redirectTo:'auth', pathMatch:'full' }
+  { path: '', redirectTo:'auth', pathMatch:'full' },
+  { path: '**' ,redirectTo:'auth', pathMatch: 'full'}
 ];
 
 @NgModule({

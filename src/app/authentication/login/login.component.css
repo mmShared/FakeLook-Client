@@ -10,7 +10,6 @@ form{
     text-align: center;
     font-size: 25px;
     width: 350px;
-    margin-top: 40px;
 }
 h2{
     color: blue;
@@ -23,18 +22,21 @@ input{
     text-align: center;
     width: 200px;
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 #submit{
-    width:100px;
+    width: 100px;
     color: red;
     background-color:sandybrown;
 }
 #notRegister{
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 20px;
-    margin-right: 100px;
 }
 #example{
     font-size: 15px;
     margin-right: -100px;
+}
+.error{
+    font-size: 20px;
 }

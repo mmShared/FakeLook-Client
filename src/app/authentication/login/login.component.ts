@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,20 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
+  sucsses: string;
+
   ngOnInit() {
+    this.sucsses = '';
   }
 
-  test(){
-    debugger
-  }
+  loginFormGroup = new FormGroup({
+    userName: new FormControl("",Validators.required),
+    password: new FormControl("",Validators.required)
+  });
 
+  login(){
+    if(this.loginFormGroup.valid){
+      this.sucsses = "Login successful !";
+    }
+  }
 }

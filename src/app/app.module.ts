@@ -6,12 +6,14 @@ import { FeedModule } from './feed/feed.module';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({

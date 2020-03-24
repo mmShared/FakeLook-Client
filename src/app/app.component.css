@@ -1,0 +1,32 @@
+h2{
+    background-color: yellow;
+    height: 35.6px;
+    border-radius: 5px;
+}
+#container{
+    position: absolute;
+    margin-left: 200px;
+    top: 20px;
+    font-size: 25px;
+    background-color: yellow;
+    border-radius: 5px;
+    width: 1000px;
+}
+button{
+    width: 140px;
+    height: 35px;
+    border-radius: 5px;
+    margin-left: 700px;
+}
+#feed{
+    margin-left: 40px;
+    width: 120px
+}
+a{
+    text-decoration: none;
+    font-size: 22px;
+    font-family: fantasy;
+}
+#name{
+    position: absolute;
+}

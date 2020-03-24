@@ -9,10 +9,8 @@ export class AuthLayoutComponent implements OnInit {
 
   constructor() { }
 
-  isLogin: boolean;
-
   ngOnInit() {
-    this.isLogin = false;
+
   }
 
   navLinks = [
@@ -25,10 +23,4 @@ export class AuthLayoutComponent implements OnInit {
       label:'login view'
     }
   ];
-  changeLinkRegister(){
-    this.isLogin = false;
-  }
-  changeLinkLogin(){
-    this.isLogin= true;
-  }
 }
