@@ -10,3 +10,9 @@
 .listLikes{
     margin-left: 320px;
 }
+.divUsers{
+    display: table;
+}
+select{
+    margin-bottom: 10px;   
+}

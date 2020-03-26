@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FeedService } from '../../feed.service';
 import { PostId } from '../../Models/postId.model';
-import { from } from 'rxjs';
+import { from, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-post-like',
@@ -21,6 +21,7 @@ export class PostLikeComponent implements OnInit {
   countLikes:number = 0;
   isLike: boolean = true;
   post: PostId;
+  likePost: Subscription;
 
   ngOnInit() {
     this.imageLike = this.pictureUnlikeUrl;
@@ -34,11 +35,13 @@ export class PostLikeComponent implements OnInit {
   };
 
   changePicture(){
-    debugger
     this.post.PostId = this.postId;
     if(this.imageLike == this.pictureUnlikeUrl){
       this.imageLike = this.pictureLikeUrl;
       this.feedService.insertLikePost(this.post);
+      this.likePost = this.feedService.getAllLikesPosts(this.postId).subscribe(res =>{
+        this.listLikes = res;
+      })
     }
     else{
       this.imageLike = this.pictureUnlikeUrl;

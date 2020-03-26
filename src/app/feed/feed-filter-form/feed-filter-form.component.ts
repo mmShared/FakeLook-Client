@@ -28,7 +28,6 @@ export class FeedFilterFormComponent implements OnInit {
   })
 
   ngOnInit() {
-    debugger
     this.createNewDateTime();
     this.users$ = this.feedService.getAllUsers().subscribe(list =>{
       this.users = list;

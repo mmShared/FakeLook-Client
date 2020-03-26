@@ -25,6 +25,4 @@ export class FeedContinuousComponent implements OnInit, OnDestroy {
       this.posts = list;
     });
   }
-
-  
 }

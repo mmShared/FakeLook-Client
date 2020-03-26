@@ -22,11 +22,12 @@ export class FeedService {
     });
   }
 
-  insertPost(newPost: post) {
-    this.http.post('http://localhost:3000/postsRoutes/posts',newPost).subscribe(res=>{
-      this.getAllPosts();
+  insertPost(newPost: any) {
+    this.http.post<any>('http://localhost:3000/postsRoutes/posts',newPost).subscribe(res =>{
+      this.post$.next(newPost);
     });
-  }
+    this.getAllPosts();
+  };
 
   uploadeImage(formdata){
     this.http.post<any>('http://localhost:3000/postsRoutes/posts/photo',formdata).subscribe();
@@ -55,6 +56,7 @@ export class FeedService {
   }
 
   insertCommentPost(comment) {
+    debugger
     this.http.post('http://localhost:3000/postsRoutes/posts/comments',comment).subscribe();
   }
 

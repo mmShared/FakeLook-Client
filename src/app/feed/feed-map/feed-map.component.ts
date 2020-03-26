@@ -29,8 +29,8 @@ export class FeedMapComponent implements OnInit, OnDestroy {
   }
   count = 0;
   ngOnInit() {
-      this.feedService.getAllPosts();
-      this.posts$ = this.feedService.post$.subscribe(list => {
+    this.feedService.getAllPosts();
+    this.posts$ = this.feedService.post$.subscribe(list => {
       this.posts = list;
     });
     this.findPosition();
