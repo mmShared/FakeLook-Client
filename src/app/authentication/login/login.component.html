@@ -5,17 +5,19 @@
     <form [formGroup]='loginFormGroup'>
         <div id="underLine">Login</div>
         <div>
+            <label>User Name:</label>
             <input formControlName='userName' type="text" placeholder="User Name">
             <div class="error" *ngIf='loginFormGroup.get("userName").errors?.required && loginFormGroup.get("userName").touched'>User Name Is Required!!</div>
         </div>
         <div>
-            <input formControlName='password' type="password" placeholder="Password">
+            <label>Password:</label>
+            <input id="passwordInput" formControlName='password' type="password" placeholder="Password">
             <div class="error" *ngIf='loginFormGroup.get("password").errors?.required && loginFormGroup.get("password").touched'>Password Is Required!!</div>
         </div>
         <div>
             <input (click)="login()" id="submit" type="submit" value="Login">
         </div>
-        <div>{{sucsses}}</div>
+        <div id="sucsses">{{sucsses}}</div>
         <div id="notRegister">Not Registered Yet? Click The Sign Up Link!</div>
     </form>
 </div>

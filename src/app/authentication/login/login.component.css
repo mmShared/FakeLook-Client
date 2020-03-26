@@ -40,3 +40,14 @@ input{
 .error{
     font-size: 20px;
 }
+#sucsses{
+    font-size: 18px;
+    color: red;
+}
+label{
+    font-size: 18px;
+    margin-right: 10px;
+}
+#passwordInput{
+    margin-left: 12px;
+}

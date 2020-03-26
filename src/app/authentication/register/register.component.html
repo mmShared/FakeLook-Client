@@ -3,16 +3,29 @@
 </div>
 <form [formGroup]="registerFormGroup">
     <h3>Register</h3>
+    <label>First Name:</label>
     <input formControlName='firstName' type="text" placeholder="First Name">
     <div *ngIf='registerFormGroup.get("firstName").errors?.required && registerFormGroup.get("firstName").touched'>First Name Is Required!!</div>
+    <br>
+    <label>Last Name:</label>
     <input formControlName='lastName' type="text" placeholder="Last Name">
     <div *ngIf='registerFormGroup.get("lastName").errors?.required && registerFormGroup.get("lastName").touched'>Last Name Is Required!!</div>
-    <input formControlName='age' type="number" placeholder="Age" min="14">
-    <input formControlName='address' type="text" placeholder="Address">
+    <br>
+    <label>Age:</label>
+    <input id="ageInput" formControlName='age' type="number" placeholder="Age" min="14">
+    <br>
+    <label>Address:</label>
+    <input id="addressInput" formControlName='address' type="text" placeholder="Address">
+    <br>
+    <label>Work Place:</label>
     <input formControlName='workPlace' type="text" placeholder="Work Place">
+    <br>
+    <label>User Name:</label>
     <input formControlName='userName' type="text" placeholder="UserName">
     <div *ngIf='registerFormGroup.get("userName").errors?.required && registerFormGroup.get("userName").touched'>User Name Is Required!!</div>
-    <input formControlName='password' type="password" placeholder="Password">
+    <br>
+    <label>Password:</label>
+    <input id="passwordInput" formControlName='password' type="password" placeholder="Password">
     <div *ngIf='registerFormGroup.get("password").errors?.required && registerFormGroup.get("password").touched'>Password Is Required!!</div>
     <div>
         <button (click)="save()" id="submit" type="submit">Register</button>
