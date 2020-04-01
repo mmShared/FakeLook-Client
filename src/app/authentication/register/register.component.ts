@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
-import { user } from '../models/user.model';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   constructor(private authService: AuthenticationService) { }
 
   sucsses: string;
-  userTemp: user;
+  userTemp: User;
 
   registerFormGroup = new FormGroup({
     firstName: new FormControl("",Validators.required),
@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
   }
 
   save(){
-    debugger
     if(this.registerFormGroup.valid){
       this.userTemp.FirstName = this.registerFormGroup.get('firstName').value;
       this.userTemp.LastName = this.registerFormGroup.get('lastName').value;

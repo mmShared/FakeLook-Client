@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FakeLook-Client';
+
+  loggedUser : {} = {};
+  ngOnInit() {
+    var stringUserStorage = sessionStorage.getItem("storageCurrentUser");
+    this.loggedUser = JSON.parse(stringUserStorage); 
+  }
 }

@@ -47,6 +47,6 @@ export class FeedMapComponent implements OnInit, OnDestroy {
     }
   }
   test(){
-    debugger
+    
   }
 }

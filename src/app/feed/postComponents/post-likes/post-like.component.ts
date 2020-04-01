@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FeedService } from '../../feed.service';
-import { PostId } from '../../Models/postId.model';
+import { PostLike } from '../../Models/postLike.model';
 import { from, Subscription } from 'rxjs';
+import { User } from 'src/app/authentication/models/user.model';
 
 @Component({
   selector: 'app-post-like',
@@ -20,8 +21,10 @@ export class PostLikeComponent implements OnInit {
   @Input() postId: number;
   countLikes:number = 0;
   isLike: boolean = true;
-  post: PostId;
+  post: PostLike;
   likePost: Subscription;
+  loggedUser: User;
+  stringUserStorage = sessionStorage.getItem("storageCurrentUser");
 
   ngOnInit() {
     this.imageLike = this.pictureUnlikeUrl;
@@ -29,13 +32,16 @@ export class PostLikeComponent implements OnInit {
       this.listLikes = list;
       this.countLikes = this.listLikes.length;
     });
+    this.loggedUser = JSON.parse(this.stringUserStorage); 
     this.post = {
-      PostId: null
+      PostId: null,
+      UserId:null
     };
   };
 
   changePicture(){
     this.post.PostId = this.postId;
+    this.post.UserId = this.loggedUser.Id;
     if(this.imageLike == this.pictureUnlikeUrl){
       this.imageLike = this.pictureLikeUrl;
       this.feedService.insertLikePost(this.post);

@@ -32,7 +32,9 @@
                 <label>Tagged Users</label>
                 <div class="input-group">
                     <select class="form-control">
-                        <option value="my user">my user</option>
+                        <option *ngFor="let user of listUsers">
+                            {{user.FirstName}} {{user.LastName}}
+                        </option>
                     </select>
                 </div>
             </div>

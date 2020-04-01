@@ -14,7 +14,6 @@ export class FeedService {
   constructor(private http: HttpClient) { }
 
   public post$ = new Subject<post[]>(); 
-  public user$ = new Subject<users[]>();
 
   getAllPosts() {
     this.http.get<post[]>('http://localhost:3000/postsRoutes/posts').subscribe(res => {
@@ -56,7 +55,6 @@ export class FeedService {
   }
 
   insertCommentPost(comment) {
-    debugger
     this.http.post('http://localhost:3000/postsRoutes/posts/comments',comment).subscribe();
   }
 

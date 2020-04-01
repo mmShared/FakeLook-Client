@@ -1,21 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { users } from '../feed/Models/users.model';
-import { user } from './models/user.model';
+import { User } from './models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+  loggedIn: boolean;
+  users$ = new Subject<User[]>();
+  loggedUser : {} = {};
 
   constructor(private http: HttpClient) { }
 
-  register(user: user){
+  isAuth(): boolean {
+    var stringUserStorage = sessionStorage.getItem("storageCurrentUser");
+    this.loggedUser = JSON.parse(stringUserStorage);
+    if (this.loggedUser) {
+      console.log(Object.keys(this.loggedUser).length)
+      this.loggedIn = true
+    } 
+    return this.loggedIn
+  }
+
+  register(user: User){
     this.http.post('http://localhost:3000/usersRoutes/user/',user).subscribe();
   }
 
-  getAllUsers(): Observable<user[]>{
-    return this.http.get<user[]>('http://localhost:3000/usersRoutes/users/');
+  getAllUsers(){
+    return this.http.get<User[]>('http://localhost:3000/usersRoutes/users/').subscribe(res =>{
+      this.users$.next(res);
+    })
   }
 }
