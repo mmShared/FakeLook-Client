@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
 import { User } from '../models/user.model';
+import { Router } from '@angular/router';
+import { tick } from '@angular/core/testing';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +12,7 @@ import { User } from '../models/user.model';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   sucsses: string;
   userTemp: User;
@@ -42,6 +44,9 @@ export class RegisterComponent implements OnInit {
       this.authService.register(this.userTemp);
       this.sucsses = 'Successfully registered !';
       this.registerFormGroup.reset();
+      setTimeout(() => {
+        this.router.navigate(['/auth']);
+      },500);
     }
     else{
       this.sucsses = 'One Of The Fields Is Empty!';

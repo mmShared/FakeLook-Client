@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { User } from '../models/user.model';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl("", [Validators.required])
   });
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
 
   ngOnInit() {
@@ -40,7 +41,12 @@ export class LoginComponent implements OnInit {
   login() {
     this.userName = this.loginFormGroup.get("userName").value;
     this.password = this.loginFormGroup.get("password").value;
-    this.authService.loggedIn = this.authCheck(this.userName, this.password)
+    this.authService.loggedIn = this.authCheck(this.userName, this.password);
+    if(this.authService.loggedIn){
+      setTimeout(() => {
+        this.router.navigate(['/feed']);
+      },500);
+    }
   }
 
   authCheck(userName: string, password: string): boolean {
@@ -56,7 +62,6 @@ export class LoginComponent implements OnInit {
       else {
         isAuthUser = false
         this.loginStatus = "userName or password not valid, try again";
-
       }
     }
     return isAuthUser
